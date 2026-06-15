@@ -31,7 +31,7 @@ const WA = "https://wa.me/919004792888?text=Hi%2C%20I%27d%20like%20to%20know%20m
 const amenities = [
   "Club House", "Gym (Open Air)", "Indoor Sports",
   "Swimming Pool (Japanese Style)", "Jacuzzi, Open Showers",
-  "Hot Spring Bath (Onsen) 温泉", "Restaurant", "Cafe 'n' Lounge",
+  "Hot Spring Bath (Onsen)", "Restaurant", "Cafe 'n' Lounge",
   "Party Hall", "DJ / Dance Floor", "Selfie Point",
   "Guest Accommodation Facility", "Driver's Dormetry", "Party Lawns",
   "Children's Play Area", "Japanese Zen Garden", "Gazebos",
@@ -135,7 +135,7 @@ function Index() {
           <div className="flex justify-center mb-8">
             <div className="sun-stamp w-28 h-28 md:w-36 md:h-36 grid place-items-center">
               <div className="text-center leading-tight">
-                <div className="kanji-mark text-white text-2xl md:text-3xl">日本</div>
+                <div className="kanji-mark text-white text-2xl md:text-3xl">NIHON</div>
                 <div className="text-[0.62rem] tracking-[0.3em] text-white/90 mt-1">SUKI · NIHON</div>
               </div>
             </div>
@@ -176,7 +176,7 @@ function Index() {
             <h2 className="headline text-4xl md:text-5xl mt-4">
               Meaning <em className="text-[var(--crimson)] not-italic">"Like Japan"</em>
             </h2>
-            <div className="divider-zen my-6 max-w-xs"><span className="kanji-mark text-2xl">好</span></div>
+            <div className="divider-zen my-6 max-w-xs"><span className="kanji-mark text-2xl">SN</span></div>
             <div className="space-y-5 text-[var(--sumi)] leading-relaxed text-[1.02rem]">
               <p>
                 <span className="font-semibold text-[var(--ink)]">Suki Nihon</span> is not merely a cluster of row houses with an impressive name — it is truly the pinnacle of fine living, incorporating subtle and classy touches of Japanese architecture.
@@ -205,12 +205,12 @@ function Index() {
 
       {/* JITAKU */}
       <section id="jitaku" className="relative py-24 md:py-32 bg-parchment-dark overflow-hidden">
-        <div className="absolute top-10 right-10 opacity-10 kanji-mark text-[14rem] leading-none select-none">家</div>
+        <div className="absolute top-10 right-10 opacity-10 kanji-mark text-[14rem] leading-none select-none">IE</div>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center reveal">
             <p className="section-label">38 Limited Edition</p>
             <h2 className="headline text-4xl md:text-5xl mt-4">Japan-Inspired Jitaku</h2>
-            <div className="divider-zen my-6 max-w-sm mx-auto"><span className="kanji-mark text-2xl">侘寂</span></div>
+            <div className="divider-zen my-6 max-w-sm mx-auto"><span className="kanji-mark text-2xl">Wabi · Sabi</span></div>
           </div>
 
           <div className="mt-12 reveal">
@@ -219,13 +219,13 @@ function Index() {
 
           <div className="mt-16 grid md:grid-cols-2 gap-10">
             <div className="reveal card-zen p-8 md:p-10">
-              <div className="kanji-mark text-3xl mb-3">壱 · A Touch of Japan</div>
+              <div className="kanji-mark text-3xl mb-3">I · A Touch of Japan</div>
               <p className="text-[var(--sumi)] leading-relaxed">
                 The single-storey variant of the modern Jitaku reinvents the classic row house — combining a gable roof with harmonious garden landscaping to create a truly Japanese atmosphere.
               </p>
             </div>
             <div className="reveal card-zen p-8 md:p-10">
-              <div className="kanji-mark text-3xl mb-3">弐 · Welcome to Japan</div>
+              <div className="kanji-mark text-3xl mb-3">II · Welcome to Japan</div>
               <p className="text-[var(--sumi)] leading-relaxed">
                 The living area of the Jitaku floor plan dispenses with the need for doors and disruptive partitions, accompanied by all the basic modern amenities. The kitchen and dining open directly onto nature — your own private paradise. Walk upstairs and be welcomed by a spacious bedroom with attached palatial bathrooms for a complete luxury experience.
               </p>
@@ -247,7 +247,7 @@ function Index() {
           <div className="text-center reveal">
             <p className="section-label">Specifications</p>
             <h2 className="headline text-4xl md:text-5xl mt-4">Amenities &amp; Interiors</h2>
-            <div className="divider-zen my-6 max-w-sm mx-auto"><span className="kanji-mark text-xl">温泉</span></div>
+            <div className="divider-zen my-6 max-w-sm mx-auto"><span className="kanji-mark text-xl">Onsen</span></div>
           </div>
 
           <div className="mt-14 grid lg:grid-cols-5 gap-10">
@@ -277,7 +277,7 @@ function Index() {
                 ))}
               </ul>
               <div className="mt-10 card-zen p-6">
-                <div className="kanji-mark text-xl mb-2">石 · Built to last</div>
+                <div className="kanji-mark text-xl mb-2">Ishi · Built to last</div>
                 <p className="text-sm text-[var(--sumi)] leading-relaxed">
                   Natural stone, premium fittings and landscaped private decks — every Jitaku is finished to be enjoyed, never maintained by you.
                 </p>
@@ -293,7 +293,7 @@ function Index() {
           <div className="text-center reveal">
             <p className="section-label">Floor Plans</p>
             <h2 className="headline text-4xl md:text-5xl mt-4">Ground &amp; First Floor</h2>
-            <div className="divider-zen my-6 max-w-sm mx-auto"><span className="kanji-mark text-xl">間</span></div>
+            <div className="divider-zen my-6 max-w-sm mx-auto"><span className="kanji-mark text-xl">MA</span></div>
           </div>
           <div className="reveal mt-12">
             <img src={p4.url} alt="Suki Nihon Jitaku — Ground Floor Plan, First Floor Plan and Backyard Garden" className="w-full rounded-sm shadow-[var(--shadow-zen)]" loading="lazy" />
@@ -319,7 +319,7 @@ function Index() {
           <div className="text-center reveal">
             <p className="section-label">Site Plan</p>
             <h2 className="headline text-4xl md:text-5xl mt-4">The Master Layout</h2>
-            <div className="divider-zen my-6 max-w-sm mx-auto"><span className="kanji-mark text-xl">園</span></div>
+            <div className="divider-zen my-6 max-w-sm mx-auto"><span className="kanji-mark text-xl">EN</span></div>
             <p className="max-w-3xl mx-auto text-[var(--sumi)] leading-relaxed mt-4">
               The social and recreational hub of Suki Nihon caters to your family's wellness through sports facilities, recreational areas and a host of essential retail. Awaken to fresh air, take to the open swimming pool, veranda and outdoor shower, then explore a unique culinary experience — meals can be arranged anywhere within the premises.
             </p>
@@ -375,7 +375,7 @@ function Index() {
             <h2 className="headline text-4xl md:text-6xl mt-5 text-[var(--parchment)]">
               A magical place — <em className="not-italic text-[var(--gold)]">intimate &amp; inspiring</em>
             </h2>
-            <div className="divider-zen my-8 max-w-sm mx-auto"><span className="text-[var(--gold)] kanji-mark text-2xl">禅</span></div>
+            <div className="divider-zen my-8 max-w-sm mx-auto"><span className="text-[var(--gold)] kanji-mark text-2xl">ZEN</span></div>
             <p className="text-[var(--parchment)]/90 leading-relaxed text-lg font-serif italic">
               The Japanese Zen Garden is arguably the most popular spot at Suki Nihon. It's a garden that functions on multiple levels at once — intimate and inspiring. The garden invites you to experience the thrill of personal interpretation and discovery in a serene landscape, uniquely beautiful in every season.
             </p>
@@ -397,7 +397,7 @@ function Index() {
             <p className="mt-6 font-serif italic text-2xl text-[var(--sumi)]">
               Our payment plan will make you feel at home.
             </p>
-            <div className="divider-zen my-10 max-w-sm mx-auto"><span className="kanji-mark text-2xl">家</span></div>
+            <div className="divider-zen my-10 max-w-sm mx-auto"><span className="kanji-mark text-2xl">IE</span></div>
           </div>
           <div className="reveal grid sm:grid-cols-3 gap-6 mt-8">
             {[
@@ -462,7 +462,7 @@ function Index() {
           </p>
           <p className="mt-4 flex flex-wrap justify-between gap-3">
             <span>© {new Date().getFullYear()} Suki Nihon · sukinihon.in</span>
-            <span className="kanji-mark text-[var(--crimson)]">好 · 日本</span>
+            <span className="kanji-mark text-[var(--crimson)]">SUKI · NIHON</span>
           </p>
         </div>
       </footer>
