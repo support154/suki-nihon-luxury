@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+Disallow: /lovable/
+
 Sitemap: https://www.sukinihon.in/sitemap.xml
