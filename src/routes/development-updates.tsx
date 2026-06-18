@@ -3,7 +3,6 @@ import p3 from "@/assets/p3.jpg.asset.json";
 import { SiteLayout, PageHero, Breadcrumbs, CTAStrip } from "@/components/SiteLayout";
 import { SITE, breadcrumbJsonLd } from "@/lib/site";
 
-const PATH = "/development-updates";
 const TITLE = "Construction & Development Updates | Suki Nihon Phase 2";
 const DESC = "Stay updated with the latest development progress and infrastructure updates.";
 
@@ -14,7 +13,7 @@ const updates = [
   { date: "Planned", h: "Landscaping &amp; Zen Garden", body: "Master-planned landscaping, zen garden and meditation areas to follow amenity block completion." },
 ];
 
-export const Route = createFileRoute(PATH)({
+export const Route = createFileRoute("/development-updates")({
   head: () => ({
     meta: [
       { title: TITLE },

@@ -3,7 +3,6 @@ import p6 from "@/assets/p6.jpg.asset.json";
 import { SiteLayout, PageHero, Breadcrumbs, CTAStrip } from "@/components/SiteLayout";
 import { SITE, breadcrumbJsonLd } from "@/lib/site";
 
-const PATH = "/master-plan";
 const TITLE = "Master Plan | Suki Nihon Phase 2 Alibag";
 const DESC = "Explore the master-planned layout, road network, amenities, and infrastructure of Suki Nihon Phase 2 Alibag.";
 
@@ -15,7 +14,7 @@ const layoutKey = [
   "Indoor Games", "Restaurant & Cafeteria",
 ];
 
-export const Route = createFileRoute(PATH)({
+export const Route = createFileRoute("/master-plan")({
   head: () => ({
     meta: [
       { title: TITLE },

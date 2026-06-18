@@ -3,11 +3,10 @@ import p4 from "@/assets/p4.jpg.asset.json";
 import { SiteLayout, PageHero, Breadcrumbs, CTAStrip } from "@/components/SiteLayout";
 import { SITE, WA, breadcrumbJsonLd } from "@/lib/site";
 
-const PATH = "/plot-sizes-pricing";
 const TITLE = "Plot Sizes & Pricing | Suki Nihon Phase 2 Alibag";
 const DESC = "View available plot sizes, pricing options, and investment opportunities at Suki Nihon Phase 2 Alibag.";
 
-export const Route = createFileRoute(PATH)({
+export const Route = createFileRoute("/plot-sizes-pricing")({
   head: () => ({
     meta: [
       { title: TITLE },

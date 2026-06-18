@@ -13,7 +13,6 @@ import zen from "@/assets/zen.jpg.asset.json";
 import { SiteLayout, PageHero, Breadcrumbs, CTAStrip } from "@/components/SiteLayout";
 import { SITE, breadcrumbJsonLd } from "@/lib/site";
 
-const PATH = "/gallery";
 const TITLE = "Project Gallery | Suki Nihon Phase 2 Alibag";
 const DESC = "View project images, site photographs, development progress, and lifestyle visuals.";
 
@@ -31,7 +30,7 @@ const images = [
   { src: zen.url, alt: "Japanese zen garden at Suki Nihon Phase 2" },
 ];
 
-export const Route = createFileRoute(PATH)({
+export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
       { title: TITLE },

@@ -2,11 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, PageHero, Breadcrumbs, CTAStrip } from "@/components/SiteLayout";
 import { SITE, WA, breadcrumbJsonLd } from "@/lib/site";
 
-const PATH = "/contact-us";
 const TITLE = "Contact Us | Suki Nihon Phase 2 Alibag";
 const DESC = "Get in touch with our sales team for site visits, pricing details, and project information.";
 
-export const Route = createFileRoute(PATH)({
+export const Route = createFileRoute("/contact-us")({
   head: () => ({
     meta: [
       { title: TITLE },

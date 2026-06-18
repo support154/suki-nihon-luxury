@@ -3,11 +3,10 @@ import explore from "@/assets/explore.jpg.asset.json";
 import { SiteLayout, PageHero, Breadcrumbs, CTAStrip } from "@/components/SiteLayout";
 import { SITE, breadcrumbJsonLd } from "@/lib/site";
 
-const PATH = "/investment-benefits";
 const TITLE = "Investment Benefits | Alibag Real Estate Opportunity";
 const DESC = "Discover why Suki Nihon Phase 2 Alibag is an ideal investment with strong appreciation and future growth potential.";
 
-export const Route = createFileRoute(PATH)({
+export const Route = createFileRoute("/investment-benefits")({
   head: () => ({
     meta: [
       { title: TITLE },

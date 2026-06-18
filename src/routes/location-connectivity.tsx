@@ -3,11 +3,10 @@ import p8 from "@/assets/p8.jpg.asset.json";
 import { SiteLayout, PageHero, Breadcrumbs, CTAStrip } from "@/components/SiteLayout";
 import { SITE, breadcrumbJsonLd } from "@/lib/site";
 
-const PATH = "/location-connectivity";
 const TITLE = "Location & Connectivity | Suki Nihon Phase 2 Alibag";
 const DESC = "Discover excellent connectivity from Mumbai, Navi Mumbai, Panvel and surrounding areas to Suki Nihon Phase 2 Alibag.";
 
-export const Route = createFileRoute(PATH)({
+export const Route = createFileRoute("/location-connectivity")({
   head: () => ({
     meta: [
       { title: TITLE },
