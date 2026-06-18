@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
+import { useState } from "react";
 import type { ReactNode } from "react";
-import { NAV, SITE, WA } from "@/lib/site";
+import { SITE, WA } from "@/lib/site";
 
 export function SiteLayout({ children }: { children: ReactNode }) {
   return (
@@ -13,48 +14,126 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   );
 }
 
+type NavItem = { to: string; label: string };
+type NavGroup = { label: string; to?: string; children?: NavItem[] };
+
+const PRIMARY_NAV: NavGroup[] = [
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about-suki-nihon-phase-2-alibag" },
+  {
+    label: "Phase 2",
+    to: "/phase-2-overview",
+    children: [
+      { to: "/master-plan", label: "Master Plan" },
+      { to: "/plot-sizes-pricing", label: "Pricing" },
+      { to: "/amenities", label: "Amenities" },
+      { to: "/location-connectivity", label: "Location" },
+    ],
+  },
+  { label: "Investment", to: "/investment-benefits" },
+  { label: "Gallery", to: "/gallery" },
+  { label: "FAQs", to: "/faqs" },
+  { label: "Blog", to: "/blogs" },
+  { label: "Contact", to: "/contact-us" },
+];
+
 function SiteHeader() {
+  const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 backdrop-blur-md bg-[oklch(0.93_0.04_80/0.9)] border-b border-[oklch(0.7_0.04_60/0.35)]">
-      <div className="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-3 shrink-0">
-          <span className="w-7 h-7 rounded-full bg-[var(--crimson)] shadow-[0_0_0_2px_oklch(0.97_0.02_80)]" />
-          <span className="font-display text-lg md:text-xl tracking-[0.22em] uppercase">Suki Nihon</span>
+      <div className="max-w-7xl mx-auto px-5 h-14 flex items-center justify-between gap-4">
+        <Link to="/" className="flex items-center gap-2.5 shrink-0">
+          <span className="w-6 h-6 rounded-full bg-[var(--crimson)] shadow-[0_0_0_2px_oklch(0.97_0.02_80)]" />
+          <span className="font-display text-base tracking-[0.22em] uppercase">Suki Nihon</span>
         </Link>
-        <nav className="hidden lg:flex gap-5 text-[0.7rem] tracking-[0.22em] uppercase text-[var(--sumi)] overflow-x-auto">
-          {NAV.map((n) => (
-            <Link
-              key={n.to}
-              to={n.to}
-              className="hover:text-[var(--crimson)] transition whitespace-nowrap"
-              activeProps={{ className: "text-[var(--crimson)]" }}
-              activeOptions={{ exact: true }}
-            >
-              {n.label}
-            </Link>
-          ))}
+        <nav className="hidden md:flex items-center gap-1 text-[0.68rem] tracking-[0.18em] uppercase text-[var(--sumi)]">
+          {PRIMARY_NAV.map((g) =>
+            g.children ? (
+              <div key={g.label} className="relative group">
+                <Link
+                  to={g.to!}
+                  className="px-2.5 py-1.5 inline-flex items-center gap-1 hover:text-[var(--crimson)] transition rounded"
+                  activeProps={{ className: "text-[var(--crimson)]" }}
+                >
+                  {g.label}
+                  <span className="text-[0.55rem] opacity-60">▾</span>
+                </Link>
+                <div className="absolute left-0 top-full pt-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition">
+                  <div className="min-w-[180px] rounded-md bg-[oklch(0.97_0.02_80)] border border-[oklch(0.7_0.04_60/0.3)] shadow-xl py-1.5">
+                    {g.children.map((c) => (
+                      <Link
+                        key={c.to}
+                        to={c.to}
+                        className="block px-3 py-1.5 text-[0.68rem] tracking-[0.18em] uppercase hover:bg-[oklch(0.9_0.04_80)] hover:text-[var(--crimson)] transition"
+                        activeProps={{ className: "text-[var(--crimson)]" }}
+                      >
+                        {c.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={g.to}
+                to={g.to!}
+                className="px-2.5 py-1.5 hover:text-[var(--crimson)] transition rounded"
+                activeProps={{ className: "text-[var(--crimson)]" }}
+                activeOptions={{ exact: true }}
+              >
+                {g.label}
+              </Link>
+            )
+          )}
         </nav>
         <div className="flex items-center gap-2">
-          <Link to="/book-site-visit" className="btn-ghost !py-2 !px-3 hidden md:inline-flex text-xs">Site Visit</Link>
-          <a href={WA} target="_blank" rel="noreferrer" className="btn-primary !py-2.5 !px-4 text-xs">Enquire</a>
+          <a href={WA} target="_blank" rel="noreferrer" className="btn-primary !py-2 !px-3.5 text-[0.7rem]">Enquire</a>
+          <button
+            type="button"
+            aria-label="Menu"
+            onClick={() => setOpen((o) => !o)}
+            className="md:hidden w-9 h-9 grid place-items-center rounded border border-[oklch(0.7_0.04_60/0.4)]"
+          >
+            <span className="block w-4 h-px bg-current relative before:content-[''] before:absolute before:-top-1.5 before:left-0 before:w-4 before:h-px before:bg-current after:content-[''] after:absolute after:top-1.5 after:left-0 after:w-4 after:h-px after:bg-current" />
+          </button>
         </div>
       </div>
-      {/* Mobile nav */}
-      <nav className="lg:hidden border-t border-[oklch(0.7_0.04_60/0.25)] overflow-x-auto">
-        <div className="flex gap-4 px-5 py-2 text-[0.65rem] tracking-[0.2em] uppercase text-[var(--sumi)] whitespace-nowrap">
-          {NAV.map((n) => (
-            <Link
-              key={n.to}
-              to={n.to}
-              className="shrink-0 hover:text-[var(--crimson)] transition"
-              activeProps={{ className: "text-[var(--crimson)]" }}
-              activeOptions={{ exact: true }}
-            >
-              {n.label}
-            </Link>
-          ))}
-        </div>
-      </nav>
+      {open && (
+        <nav className="md:hidden border-t border-[oklch(0.7_0.04_60/0.25)] bg-[oklch(0.95_0.03_80)]">
+          <ul className="px-5 py-3 text-[0.72rem] tracking-[0.18em] uppercase text-[var(--sumi)]">
+            {PRIMARY_NAV.map((g) => (
+              <li key={g.label} className="py-1">
+                {g.to && (
+                  <Link
+                    to={g.to}
+                    onClick={() => setOpen(false)}
+                    className="block py-1 hover:text-[var(--crimson)]"
+                    activeProps={{ className: "text-[var(--crimson)]" }}
+                  >
+                    {g.label}
+                  </Link>
+                )}
+                {g.children && (
+                  <ul className="pl-4 border-l border-[oklch(0.7_0.04_60/0.3)] mt-1">
+                    {g.children.map((c) => (
+                      <li key={c.to}>
+                        <Link
+                          to={c.to}
+                          onClick={() => setOpen(false)}
+                          className="block py-1 text-[0.68rem] opacity-80 hover:text-[var(--crimson)]"
+                          activeProps={{ className: "text-[var(--crimson)] !opacity-100" }}
+                        >
+                          {c.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </header>
   );
 }
@@ -148,9 +227,9 @@ function SiteFooter() {
         <div>
           <div className="section-label !text-[var(--gold)]">Explore</div>
           <ul className="mt-4 space-y-2 text-sm">
-            {NAV.slice(1, 8).map((n) => (
-              <li key={n.to}>
-                <Link to={n.to} className="text-[var(--parchment)]/80 hover:text-[var(--gold)] transition">
+            {PRIMARY_NAV.slice(1, 7).map((n) => (
+              <li key={n.label}>
+                <Link to={n.to!} className="text-[var(--parchment)]/80 hover:text-[var(--gold)] transition">
                   {n.label}
                 </Link>
               </li>
