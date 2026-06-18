@@ -227,9 +227,9 @@ function SiteFooter() {
         <div>
           <div className="section-label !text-[var(--gold)]">Explore</div>
           <ul className="mt-4 space-y-2 text-sm">
-            {NAV.slice(1, 8).map((n) => (
-              <li key={n.to}>
-                <Link to={n.to} className="text-[var(--parchment)]/80 hover:text-[var(--gold)] transition">
+            {PRIMARY_NAV.slice(1, 7).map((n) => (
+              <li key={n.label}>
+                <Link to={n.to!} className="text-[var(--parchment)]/80 hover:text-[var(--gold)] transition">
                   {n.label}
                 </Link>
               </li>
