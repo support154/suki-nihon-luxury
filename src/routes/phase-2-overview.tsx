@@ -6,6 +6,7 @@ import { SITE, breadcrumbJsonLd } from "@/lib/site";
 const TITLE = "Suki Nihon Phase 2 Overview | Alibag Investment Property";
 const DESC = "Explore the master-planned Phase 2 development offering premium plots and investment opportunities in Alibag.";
 
+const PATH = "/phase-2-overview";
 export const Route = createFileRoute("/phase-2-overview")({
   head: () => ({
     meta: [

@@ -14,6 +14,7 @@ const layoutKey = [
   "Indoor Games", "Restaurant & Cafeteria",
 ];
 
+const PATH = "/master-plan";
 export const Route = createFileRoute("/master-plan")({
   head: () => ({
     meta: [

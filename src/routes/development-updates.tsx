@@ -13,6 +13,7 @@ const updates = [
   { date: "Planned", h: "Landscaping &amp; Zen Garden", body: "Master-planned landscaping, zen garden and meditation areas to follow amenity block completion." },
 ];
 
+const PATH = "/development-updates";
 export const Route = createFileRoute("/development-updates")({
   head: () => ({
     meta: [

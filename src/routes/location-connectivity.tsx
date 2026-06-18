@@ -6,6 +6,7 @@ import { SITE, breadcrumbJsonLd } from "@/lib/site";
 const TITLE = "Location & Connectivity | Suki Nihon Phase 2 Alibag";
 const DESC = "Discover excellent connectivity from Mumbai, Navi Mumbai, Panvel and surrounding areas to Suki Nihon Phase 2 Alibag.";
 
+const PATH = "/location-connectivity";
 export const Route = createFileRoute("/location-connectivity")({
   head: () => ({
     meta: [

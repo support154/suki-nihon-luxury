@@ -16,6 +16,7 @@ const faqs = [
   { q: "Is bank loan financing available?", a: "Yes, financing support is available from leading banks and housing finance companies." },
 ];
 
+const PATH = "/faqs";
 export const Route = createFileRoute("/faqs")({
   head: () => ({
     meta: [

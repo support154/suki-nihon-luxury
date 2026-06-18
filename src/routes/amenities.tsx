@@ -17,6 +17,7 @@ const amenities = [
   "Pick-up & Drop Service from Alibag & Mandwa Jetty",
 ];
 
+const PATH = "/amenities";
 export const Route = createFileRoute("/amenities")({
   head: () => ({
     meta: [

@@ -6,6 +6,7 @@ import { SITE, breadcrumbJsonLd } from "@/lib/site";
 const TITLE = "Investment Benefits | Alibag Real Estate Opportunity";
 const DESC = "Discover why Suki Nihon Phase 2 Alibag is an ideal investment with strong appreciation and future growth potential.";
 
+const PATH = "/investment-benefits";
 export const Route = createFileRoute("/investment-benefits")({
   head: () => ({
     meta: [

@@ -5,6 +5,7 @@ import { SITE, WA, breadcrumbJsonLd } from "@/lib/site";
 const TITLE = "Contact Us | Suki Nihon Phase 2 Alibag";
 const DESC = "Get in touch with our sales team for site visits, pricing details, and project information.";
 
+const PATH = "/contact-us";
 export const Route = createFileRoute("/contact-us")({
   head: () => ({
     meta: [

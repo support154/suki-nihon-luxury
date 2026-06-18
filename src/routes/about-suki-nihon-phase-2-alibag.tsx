@@ -7,6 +7,7 @@ const TITLE = "About Suki Nihon Phase 2 Alibag | Premium Real Estate Project";
 const DESC =
   "Learn about Suki Nihon Phase 2 Alibag, a thoughtfully planned investment destination offering premium plots and lifestyle amenities.";
 
+const PATH = "/about-suki-nihon-phase-2-alibag";
 export const Route = createFileRoute("/about-suki-nihon-phase-2-alibag")({
   head: () => ({
     meta: [

@@ -30,6 +30,7 @@ const images = [
   { src: zen.url, alt: "Japanese zen garden at Suki Nihon Phase 2" },
 ];
 
+const PATH = "/gallery";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [

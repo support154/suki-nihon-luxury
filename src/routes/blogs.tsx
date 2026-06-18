@@ -36,6 +36,7 @@ const posts = [
   { slug: "how-to-shortlist-plot-alibag", title: "How to Shortlist the Right Plot in Alibag", cat: "Property Buying Guide" },
 ];
 
+const PATH = "/blogs";
 export const Route = createFileRoute("/blogs")({
   head: () => ({
     meta: [

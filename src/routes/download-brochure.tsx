@@ -5,6 +5,7 @@ import { SITE, WA, breadcrumbJsonLd } from "@/lib/site";
 const TITLE = "Download Brochure | Suki Nihon Phase 2 Alibag";
 const DESC = "Download the latest project brochure including plot details, amenities, pricing, and location map.";
 
+const PATH = "/download-brochure";
 export const Route = createFileRoute("/download-brochure")({
   head: () => ({
     meta: [

@@ -6,6 +6,7 @@ import { SITE, WA, breadcrumbJsonLd } from "@/lib/site";
 const TITLE = "Plot Sizes & Pricing | Suki Nihon Phase 2 Alibag";
 const DESC = "View available plot sizes, pricing options, and investment opportunities at Suki Nihon Phase 2 Alibag.";
 
+const PATH = "/plot-sizes-pricing";
 export const Route = createFileRoute("/plot-sizes-pricing")({
   head: () => ({
     meta: [
