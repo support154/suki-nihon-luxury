@@ -3,12 +3,12 @@ import p2 from "@/assets/p2.jpg.asset.json";
 import { SiteLayout, PageHero, Breadcrumbs, CTAStrip } from "@/components/SiteLayout";
 import { SITE, breadcrumbJsonLd } from "@/lib/site";
 
-const PATH = "/about-suki-nihon-phase-2-alibag";
 const TITLE = "About Suki Nihon Phase 2 Alibag | Premium Real Estate Project";
 const DESC =
   "Learn about Suki Nihon Phase 2 Alibag, a thoughtfully planned investment destination offering premium plots and lifestyle amenities.";
 
-export const Route = createFileRoute(PATH)({
+const PATH = "/about-suki-nihon-phase-2-alibag";
+export const Route = createFileRoute("/about-suki-nihon-phase-2-alibag")({
   head: () => ({
     meta: [
       { title: TITLE },

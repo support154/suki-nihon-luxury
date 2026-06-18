@@ -3,11 +3,11 @@ import p6 from "@/assets/p6.jpg.asset.json";
 import { SiteLayout, PageHero, Breadcrumbs, CTAStrip } from "@/components/SiteLayout";
 import { SITE, breadcrumbJsonLd } from "@/lib/site";
 
-const PATH = "/phase-2-overview";
 const TITLE = "Suki Nihon Phase 2 Overview | Alibag Investment Property";
 const DESC = "Explore the master-planned Phase 2 development offering premium plots and investment opportunities in Alibag.";
 
-export const Route = createFileRoute(PATH)({
+const PATH = "/phase-2-overview";
+export const Route = createFileRoute("/phase-2-overview")({
   head: () => ({
     meta: [
       { title: TITLE },

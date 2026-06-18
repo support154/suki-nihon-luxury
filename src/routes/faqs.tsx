@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, PageHero, Breadcrumbs, CTAStrip } from "@/components/SiteLayout";
 import { SITE, breadcrumbJsonLd } from "@/lib/site";
 
-const PATH = "/faqs";
 const TITLE = "FAQs | Suki Nihon Phase 2 Alibag";
 const DESC = "Find answers about plots, pricing, location, amenities, legal approvals, and booking procedures.";
 
@@ -17,7 +16,8 @@ const faqs = [
   { q: "Is bank loan financing available?", a: "Yes, financing support is available from leading banks and housing finance companies." },
 ];
 
-export const Route = createFileRoute(PATH)({
+const PATH = "/faqs";
+export const Route = createFileRoute("/faqs")({
   head: () => ({
     meta: [
       { title: TITLE },

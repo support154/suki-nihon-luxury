@@ -3,7 +3,6 @@ import jitaku from "@/assets/jitaku.jpg.asset.json";
 import { SiteLayout, PageHero, Breadcrumbs, CTAStrip } from "@/components/SiteLayout";
 import { SITE, breadcrumbJsonLd } from "@/lib/site";
 
-const PATH = "/amenities";
 const TITLE = "Amenities | Suki Nihon Phase 2 Alibag";
 const DESC = "Enjoy premium lifestyle amenities designed for comfort, recreation, and long-term value appreciation.";
 
@@ -18,7 +17,8 @@ const amenities = [
   "Pick-up & Drop Service from Alibag & Mandwa Jetty",
 ];
 
-export const Route = createFileRoute(PATH)({
+const PATH = "/amenities";
+export const Route = createFileRoute("/amenities")({
   head: () => ({
     meta: [
       { title: TITLE },
