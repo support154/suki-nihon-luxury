@@ -43,6 +43,26 @@ export const Route = createFileRoute("/contact-us")({
 });
 
 function Page() {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setStatus("sending");
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/support@nuwebwave.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(Object.fromEntries(new FormData(form).entries())),
+      });
+      if (!res.ok) throw new Error("Submission failed");
+      setStatus("sent");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
     <SiteLayout>
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Contact Us", path: PATH }]} />
