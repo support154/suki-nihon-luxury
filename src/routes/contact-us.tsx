@@ -73,21 +73,22 @@ function Page() {
           </div>
 
           <form
+            action="https://formsubmit.co/support@nuwebwave.com"
+            method="POST"
             className="card-zen p-7 space-y-4"
-            onSubmit={(e) => {
-              e.preventDefault();
-              const f = e.currentTarget;
-              const data = new FormData(f);
-              const msg = `Hi, I'm ${data.get("name")} (${data.get("phone")}). ${data.get("message") ?? ""}`;
-              window.open(`https://wa.me/919004792888?text=${encodeURIComponent(msg)}`, "_blank");
-            }}
           >
+            <input type="hidden" name="_subject" value="New enquiry — Suki Nihon Phase 2 Alibag" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value={`${SITE.url}/contact-us/?sent=1`} />
+            <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
             <h2 className="headline text-2xl">Send an enquiry</h2>
             <input name="name" required placeholder="Full Name" className="w-full bg-transparent border-b border-[oklch(0.6_0.04_60/0.5)] py-2 outline-none focus:border-[var(--crimson)]" />
             <input name="phone" required placeholder="Phone Number" className="w-full bg-transparent border-b border-[oklch(0.6_0.04_60/0.5)] py-2 outline-none focus:border-[var(--crimson)]" />
             <input name="email" type="email" placeholder="Email (optional)" className="w-full bg-transparent border-b border-[oklch(0.6_0.04_60/0.5)] py-2 outline-none focus:border-[var(--crimson)]" />
             <textarea name="message" rows={4} placeholder="Tell us about your requirement…" className="w-full bg-transparent border-b border-[oklch(0.6_0.04_60/0.5)] py-2 outline-none focus:border-[var(--crimson)]" />
-            <button type="submit" className="btn-primary mt-2">Send via WhatsApp</button>
+            <button type="submit" className="btn-primary mt-2">Send Enquiry</button>
+            <p className="text-xs text-[var(--sumi)]/70">Or chat instantly on <a href={WA} target="_blank" rel="noreferrer" className="underline">WhatsApp</a>.</p>
           </form>
         </div>
       </section>
