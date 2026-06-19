@@ -93,24 +93,39 @@ function Page() {
             </div>
           </div>
 
-          <form
-            action="https://formsubmit.co/support@nuwebwave.com"
-            method="POST"
-            className="card-zen p-7 space-y-4"
-          >
-            <input type="hidden" name="_subject" value="New enquiry — Suki Nihon Phase 2 Alibag" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value={`${SITE.url}/contact-us/?sent=1`} />
-            <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
-            <h2 className="headline text-2xl">Send an enquiry</h2>
-            <input name="name" required placeholder="Full Name" className="w-full bg-transparent border-b border-[oklch(0.6_0.04_60/0.5)] py-2 outline-none focus:border-[var(--crimson)]" />
-            <input name="phone" required placeholder="Phone Number" className="w-full bg-transparent border-b border-[oklch(0.6_0.04_60/0.5)] py-2 outline-none focus:border-[var(--crimson)]" />
-            <input name="email" type="email" placeholder="Email (optional)" className="w-full bg-transparent border-b border-[oklch(0.6_0.04_60/0.5)] py-2 outline-none focus:border-[var(--crimson)]" />
-            <textarea name="message" rows={4} placeholder="Tell us about your requirement…" className="w-full bg-transparent border-b border-[oklch(0.6_0.04_60/0.5)] py-2 outline-none focus:border-[var(--crimson)]" />
-            <button type="submit" className="btn-primary mt-2">Send Enquiry</button>
-            <p className="text-xs text-[var(--sumi)]/70">Or chat instantly on <a href={WA} target="_blank" rel="noreferrer" className="underline">WhatsApp</a>.</p>
-          </form>
+          {status === "sent" ? (
+            <div className="card-zen p-7 space-y-4 flex flex-col justify-center">
+              <h2 className="headline text-2xl">Thank you!</h2>
+              <p className="text-[var(--sumi)] leading-relaxed">
+                Thank you for submitting your details. Our team will contact you shortly.
+              </p>
+              <p className="text-xs text-[var(--sumi)]/70">Or chat instantly on <a href={WA} target="_blank" rel="noreferrer" className="underline">WhatsApp</a>.</p>
+            </div>
+          ) : (
+            <form
+              onSubmit={handleSubmit}
+              action="https://formsubmit.co/support@nuwebwave.com"
+              method="POST"
+              className="card-zen p-7 space-y-4"
+            >
+              <input type="hidden" name="_subject" value="New enquiry — Suki Nihon Phase 2 Alibag" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
+              <h2 className="headline text-2xl">Send an enquiry</h2>
+              <input name="name" required placeholder="Full Name" className="w-full bg-transparent border-b border-[oklch(0.6_0.04_60/0.5)] py-2 outline-none focus:border-[var(--crimson)]" />
+              <input name="phone" required placeholder="Phone Number" className="w-full bg-transparent border-b border-[oklch(0.6_0.04_60/0.5)] py-2 outline-none focus:border-[var(--crimson)]" />
+              <input name="email" type="email" placeholder="Email (optional)" className="w-full bg-transparent border-b border-[oklch(0.6_0.04_60/0.5)] py-2 outline-none focus:border-[var(--crimson)]" />
+              <textarea name="message" rows={4} placeholder="Tell us about your requirement…" className="w-full bg-transparent border-b border-[oklch(0.6_0.04_60/0.5)] py-2 outline-none focus:border-[var(--crimson)]" />
+              <button type="submit" disabled={status === "sending"} className="btn-primary mt-2 disabled:opacity-60">
+                {status === "sending" ? "Sending…" : "Send Enquiry"}
+              </button>
+              {status === "error" && (
+                <p className="text-sm text-[var(--crimson)]">Something went wrong. Please try again or reach us on WhatsApp.</p>
+              )}
+              <p className="text-xs text-[var(--sumi)]/70">Or chat instantly on <a href={WA} target="_blank" rel="noreferrer" className="underline">WhatsApp</a>.</p>
+            </form>
+          )}
         </div>
       </section>
       <CTAStrip />
